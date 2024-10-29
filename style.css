@@ -1,0 +1,180 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f4f9;
+}
+
+/* Container Styling */
+.todo-container {
+    width: 90%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-container h1 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* Input Section Styling */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e3e8;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section input:focus {
+    border-color: #3a9ad9;
+    box-shadow: 0px 0px 8px rgba(58, 154, 217, 0.2);
+}
+
+.input-section button {
+    padding: 12px 18px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #3a9ad9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input-section button:hover {
+    background-color: #3183b1;
+    transform: scale(1.05);
+}
+
+.clear-button {
+    background-color: #e57373;
+}
+
+.clear-button:hover {
+    background-color: #d32f2f;
+}
+
+/* To-Do List Styling */
+.todo-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: #f9fafc;
+    border-left: 5px solid #3a9ad9;
+    transition: background 0.3s, transform 0.2s;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+.todo-list li button {
+    background-color: #4CAF50; /* Green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px; /* Add some space between buttons */
+}
+
+.todo-list li button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.todo-list li:hover {
+    background: #edf3f8;
+    transform: translateX(3px);
+}
+
+.todo-list li.completed {
+    text-decoration: line-through;
+    color: #b5c0c7;
+    background-color: #e3f1fa;
+}
+
+.todo-list li button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list li button:hover {
+    background-color: #d32f2f;
+}
+
+/* Scrollbar styling for To-Do List */
+.todo-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: #d1d9e6;
+    border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: #f1f4f9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+    .input-section {
+        gap: 5px;
+        flex-direction: column;
+    }
+    .input-section button {
+        padding: 10px;
+    }
+}
+    
